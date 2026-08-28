@@ -10,10 +10,8 @@ start(_Type, _Args) ->
           #{pop_port => 9558,
             query_port => 9559,
             capabilities => coingecko_filter_app:base_capabilities(),
-            pop_peers => [{"disco.roques.me", 443}],
-            pop_advertise_host => <<"coingecko.roques.me">>,
-            pop_advertise_port => 443,
-            pop_advertise_query_port => 443}),
+            pop_peers => [{"localhost", 9100}],
+            pop_role => leaf}),
     {ok, Pid}.
 
 stop(_State) -> ok.
